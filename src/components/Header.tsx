@@ -30,7 +30,7 @@ export default function Header() {
 
           <AnimatedText 
             text="Mel" 
-            className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-purple-600"
+            className="text-6xl md:text-8xl font-bold text-pink-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
             once
             delay={0.4}
           />

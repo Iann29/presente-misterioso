@@ -30,7 +30,7 @@ export default function FloatingCats() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2000);
+    }, 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -86,28 +86,28 @@ interface FloatingCatProps {
 }
 
 function FloatingCat({ cat, scrollProgress }: FloatingCatProps) {
-  // Transformar o scroll em movimento horizontal suave com menos sensibilidade
+  // Transformar o scroll em movimento horizontal suave com mais sensibilidade
   const xMovement = useTransform(
     scrollProgress,
     [0, 1],
-    cat.direction === 'left' ? [0, -30] : [0, 30] // Menos movimento para reduzir oscilação
+    cat.direction === 'left' ? [0, -60] : [0, 60] // Aumentado de 30 para 60
   );
   
-  // Movimento vertical com o scroll - reduzido para evitar tremulação
+  // Movimento vertical com o scroll - aumentado para mais movimento
   const yMovement = useTransform(
     scrollProgress,
     [0, 0.5, 1],
-    [0, -10, 0] // Menos movimento para reduzir oscilação
+    [0, -25, 0] // Aumentado de 10 para 25
   );
   
-  // Rotação suave com o scroll - range reduzido
+  // Rotação suave com o scroll - range aumentado
   const rotation = useTransform(
     scrollProgress,
     [0, 0.5, 1],
     [
-      cat.rotationRange[0] * 0.7, // Reduzindo o ângulo para 70% do original
-      (cat.rotationRange[0] + cat.rotationRange[1]) / 2 * 0.7,
-      cat.rotationRange[1] * 0.7
+      cat.rotationRange[0] * 1.2, // Aumentando o ângulo para 120% do original
+      (cat.rotationRange[0] + cat.rotationRange[1]) / 2 * 1.2,
+      cat.rotationRange[1] * 1.2
     ]
   );
 

@@ -7,7 +7,6 @@ import QuoteSection from './components/QuoteSection';
 import Footer from './components/Footer';
 import AnimatedCard from './components/AnimatedCard';
 import LoadingScreen from './components/LoadingScreen';
-import LoveButtons from './components/LoveButtons';
 import { motion } from 'unframer';
 
 function App() {
@@ -60,9 +59,6 @@ function App() {
 
           {/* Seção de mensagens animadas */}
           <MessageSection />
-          
-          {/* Seção interativa de botões */}
-          <LoveButtons />
           
           {/* Imagem especial */}
           <section className="py-12 px-4">
